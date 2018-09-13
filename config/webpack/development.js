@@ -2,6 +2,7 @@
 
 // eslint-disable-next-line
 const dotenv = require('dotenv').config();
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const merge = require('webpack-merge');
 const sharedConfig = require('./shared.js');
 const { settings, output } = require('./configuration.js');
@@ -11,6 +12,7 @@ module.exports = merge(sharedConfig, {
   mode: 'development',
   stats: { errorDetails: true },
   output: { pathinfo: true },
+  plugins: [],
   devServer: {
     clientLogLevel: 'none',
     https: settings.dev_server.https,

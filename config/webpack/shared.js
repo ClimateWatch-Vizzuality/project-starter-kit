@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const { basename, dirname, join, relative, resolve } = require('path');
 const { sync } = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const WebpackAssetsManifest = require('webpack-assets-manifest');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 
 const extname = require('path-complete-extname');
@@ -35,8 +35,8 @@ module.exports = {
   output: {
     path: output.path,
     publicPath: output.publicPath,
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js'
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js'
   },
   module: {
     rules: sync(join(loadersDir, '*.js')).map(loader => require(loader))
@@ -51,7 +51,11 @@ module.exports = {
         ? '[id]-[hash].css'
         : '[id].css'
     }),
-    new ManifestPlugin({ publicPath: output.publicPath, writeToFileEmit: true })
+    new WebpackAssetsManifest({
+      entrypoints: true,
+      writeToDisk: true,
+      publicPath: true
+    })
   ],
   resolve: {
     extensions: settings.extensions,
@@ -64,5 +68,26 @@ module.exports = {
     alias: { app: 'app', components: 'app/components', routes: 'app/routes' }
   },
   resolveLoader: { modules: [ 'node_modules' ] },
-  node: { fs: 'empty', net: 'empty' }
+  node: { fs: 'empty', net: 'empty' },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\\/]node_modules[\\\/]/,
+          // create a splitChunk for each node vendor
+          name(module) {
+            const packageName = module.context.match(
+              /[\\\/]node_modules[\\\/](.*?)([\\\/]|$)/
+            )[1];
+
+            return `npm.${packageName.replace('@', '')}`;
+          }
+        }
+      }
+    }
+  }
 };

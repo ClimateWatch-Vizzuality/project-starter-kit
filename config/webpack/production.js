@@ -11,7 +11,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const sharedConfig = require('./shared.js');
 
 module.exports = merge(sharedConfig, {
-  output: { filename: '[name]-[chunkhash].js' },
+  output: { filename: '[name]-[hash].js' },
   stats: 'normal',
   mode: 'production',
   optimization: {

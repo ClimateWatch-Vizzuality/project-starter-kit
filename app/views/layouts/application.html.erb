@@ -5,13 +5,14 @@
     <%= csrf_meta_tags %>
 
     <% if @is_production %>
-      <%= stylesheet_pack_tag 'main' %>
+      <%= stylesheet_entrypoint_pack_tag 'main' %>
     <% end %>
   </head>
 
   <body>
     <%= yield %>
 
-    <%= javascript_pack_tag 'main' %>
+    <%= javascript_entrypoint_pack_tag 'main' %>
+
   </body>
 </html>

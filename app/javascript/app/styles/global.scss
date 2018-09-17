@@ -1,5 +1,6 @@
 @import 'settings';
- :global {
+
+:global {
   .global_Tooltip {
     font-family: $font-family-3;
     padding: 15px;
@@ -8,7 +9,8 @@
     font-size: $font-size-xs;
     letter-spacing: -0.1px;
     box-shadow: 0 5px 15px 0 rgba(17, 55, 80, 0.15);
-     &::after { // Hides the arrow
+
+    &::after { // Hides the arrow
       display: none;
     }
   }

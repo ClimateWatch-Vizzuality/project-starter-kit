@@ -1,5 +1,7 @@
 // Font families
 $font-family-1: 'Lato', sans-serif;
+$font-family-2: 'Gill Sans';
+$font-family-3: 'Roboto Mono', monospace;
 
 // Font sizes
 $font-size-xs: 0.75rem; // 12px / 16px
@@ -16,6 +18,7 @@ $font-weight-light: 300;
 $font-weight: 400;
 $font-weight-semi-bold: 500;
 $font-weight-bold: 600;
+$font-weight-extra-bold: 900;
 
 // Layout
 $gutter-padding: 30px;
@@ -23,7 +26,7 @@ $max-width: 1230px;
 $grid-gap: 30px;
 $modal-padding: 35px;
 $navbar-height: 60px;
-$header-height: 170px;
+$header-height: 60px;
 $footer-height: 300px;
 $card-content-margin: 15px;
 $paragraph-max-width: 770px;
@@ -31,8 +34,18 @@ $logos-top-bottom-margin: 15px;
 
 // Colors
 $black: #333;
+$butterscotch: #ffc735;
 $white: #fff;
-$theme-color: #233140;
+$marineblue: #233140;
+
+// Theme-colors
+$theme-color: $marineblue;
+$action-color: $butterscotch;
+$border-color: rgba(26, 28, 34, 0.1);
+
+// Line height
+$line-height: 1.63;
+$line-height-small: 1.23;
 
 // Breakpoints
 $breakpoint-mobile-only: 37.4375rem; // 599px / 16px

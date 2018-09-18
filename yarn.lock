@@ -8461,9 +8461,9 @@ react-group@^1.0.6:
   dependencies:
     prop-types "^15.6.0"
 
-react-hot-loader@4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.3.4.tgz#4f9bdd55bb20d77a6ae8931fa1c187e5f0ce6279"
+react-hot-loader@4.3.8, react-hot-loader@^4.3.6:
+  version "4.3.8"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.3.8.tgz#81f174a9b70fb5a4d4f2e9134d73659ddcd779cf"
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
@@ -8603,12 +8603,13 @@ react-transition-group@^1.1.2, react-transition-group@^1.2.0:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react-universal-component@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-3.0.0.tgz#62fc71f314b625a9f8ec9dda310402e669211a8f"
+react-universal-component@5.0.0-alpha.0:
+  version "5.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-5.0.0-alpha.0.tgz#aaa009195d204a21a98ed2f1ebd500d729d431b1"
   dependencies:
     hoist-non-react-statics "^2.2.1"
     prop-types "^15.5.10"
+    react-hot-loader "^4.3.6"
 
 react-virtualized@^9.20.1:
   version "9.20.1"

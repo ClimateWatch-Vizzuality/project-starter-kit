@@ -1,10 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'app';
+import { AppContainer } from 'react-hot-loader';
 
-document.addEventListener('DOMContentLoaded', () => {
+const render = Component => {
   ReactDOM.render(
-    <App data={Object.assign({}, window.__data)} />,
-    document.querySelector('#root')
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
   );
-});
+};
+
+document.addEventListener('DOMContentLoaded', () => render(App));
+
+if (module.hot) {
+  /* eslint-disable global-require */
+  module.hot.accept('../app', () => {
+    render(require('../app').default);
+  });
+}

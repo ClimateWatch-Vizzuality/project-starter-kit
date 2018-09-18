@@ -3,6 +3,7 @@
 // eslint-disable-next-line
 const dotenv = require('dotenv').config();
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const sharedConfig = require('./shared.js');
 const { settings, output } = require('./configuration.js');
@@ -12,7 +13,7 @@ module.exports = merge(sharedConfig, {
   mode: 'development',
   stats: { errorDetails: true },
   output: { pathinfo: true },
-  plugins: [],
+  plugins: [ new webpack.HotModuleReplacementPlugin() ],
   devServer: {
     clientLogLevel: 'none',
     https: settings.dev_server.https,
@@ -23,6 +24,8 @@ module.exports = merge(sharedConfig, {
     compress: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
     historyApiFallback: true,
-    watchOptions: { ignored: /node_modules/ }
+    watchOptions: { ignored: /node_modules/ },
+    hot: true,
+    hotOnly: true
   }
 });

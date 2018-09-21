@@ -1,6 +1,6 @@
 import { connectRoutes, NOT_FOUND, redirect } from 'redux-first-router';
 import createHistory from 'history/createBrowserHistory';
-import queryString from 'query-string';
+import queryString from 'qs';
 
 import NationalSections from './sections/national-circumstances';
 import GHGSections from './sections/ghg-emissions';

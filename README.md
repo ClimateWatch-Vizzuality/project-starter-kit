@@ -57,6 +57,10 @@ yarn start
 
 Point your browser to `http://localhost:3000/`. Ta-da!
 
+### Tests
+
+`bundle exec rspec spec`
+
 ### Launching the app with docker
 ```docker-compose up```
 Ta-da!

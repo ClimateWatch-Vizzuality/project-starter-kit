@@ -21,6 +21,10 @@ Style/MultilineOperationIndentation:
 Style/DotPosition:
   EnforcedStyle: trailing
 
+Style/ExpandPathArguments:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
 Style/SymbolArray:
   EnforcedStyle: brackets
 
@@ -29,6 +33,10 @@ Style/FrozenStringLiteralComment:
 
 Style/PercentLiteralDelimiters:
   Enabled: false
+
+Style/StringLiterals:
+  Exclude:
+    - 'spec/rails_helper.rb'
 
 Style/Documentation:
   Enabled: false

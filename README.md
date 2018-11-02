@@ -25,11 +25,11 @@ These will satisfy both the frontend and backend's dependency requirements.
 #### Setting up the Rails environment
 
 Copy the sample `.env.sample` file to `.env` and modify it as needed to fit the
-project's settings. At the very least you'll need to have the `DATABASE_URL`
+project's settings. At the very least you'll need to have the `POSTGRES_URL`
 env variable.
 
 ```
-DATABASE_URL=postgresql://postgres@localhost/cw-starter-kit_development
+POSTGRES_URL=postgresql://postgres@localhost/cw-starter-kit_development
 ```
 
 #### Setting up the database
@@ -56,6 +56,10 @@ yarn start
 ```
 
 Point your browser to `http://localhost:3000/`. Ta-da!
+
+### Tests
+
+`bundle exec rspec spec`
 
 ### Launching the app with docker
 ```docker-compose up```

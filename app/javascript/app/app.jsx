@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import 'cw-components/dist/main.css';
+import 'cw-components/dist/main';
 
 import React from 'react';
 import PropTypes from 'prop-types';
